@@ -1,9 +1,12 @@
 package chen.ce.kuan.ctn;
 
+import chen.ce.kuan.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @Title chen.ce.kuan.ctn
@@ -14,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class MainController {
+    @Resource
+    private UserService userService;
+
     @RequestMapping("home")
     public String homePage(){
         return "This  is home page---from spring boot";
